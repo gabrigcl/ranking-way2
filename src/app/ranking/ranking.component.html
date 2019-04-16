@@ -1,0 +1,72 @@
+<section class="container">
+  <div class="row">
+    <div class="col col-12 flex-container">
+        <div class="search-form">
+          <mat-form-field appearance="standard">
+            <input [(ngModel)]="code" matInput placeholder="Digite o código da competição" type="search" (keyup.enter)="getCompetitionStandings(code)">
+            <button (click)="getCompetitionStandings(code)" mat-icon-button matSuffix><mat-icon>search</mat-icon></button>
+          </mat-form-field>
+        </div><br>
+        <p class="error-msg" *ngIf="error.status">{{error.msg}}</p><br>
+        <h2 class="teamName">{{ competitionName }}</h2>
+        <div class="standings flex-container" *ngFor="let standing of standings">
+          <h4 class="groupName" *ngIf="standing.group != null">{{ standing.group }}</h4>
+          <mat-card class="card" *ngFor="let table of standing.table" >
+            <mat-card-header>
+              <mat-card-title><span class="teamPosition">{{ table.position }}</span>{{ table.team.name }}</mat-card-title>
+            </mat-card-header>
+            <mat-grid-list cols="4" rowHeight="50px">
+              <mat-grid-tile
+                  [colspan]="3"
+                  [rowspan]="1"
+                  [style.background-color]="'#6e95ac'">
+                vitórias
+              </mat-grid-tile>
+              <mat-grid-tile
+                  [colspan]="1"
+                  [rowspan]="1"
+                  [style.background-color]="'#5f5c61'">
+                {{ table.won }}
+              </mat-grid-tile>
+              <mat-grid-tile
+                  [colspan]="3"
+                  [rowspan]="1"
+                  [style.background-color]="'#3b81a8'">
+                empates
+              </mat-grid-tile>
+              <mat-grid-tile
+                  [colspan]="1"
+                  [rowspan]="1"
+                  [style.background-color]="'#c9c9c9'">
+                  {{ table.draw }}
+              </mat-grid-tile>
+              <mat-grid-tile
+                  [colspan]="3"
+                  [rowspan]="1"
+                  [style.background-color]="'#6e95ac'">
+                derrotas
+              </mat-grid-tile>
+              <mat-grid-tile
+                  [colspan]="1"
+                  [rowspan]="1"
+                  [style.background-color]="'#5f5c61'">
+                  {{ table.lost }}
+              </mat-grid-tile>
+              <mat-grid-tile
+                  [colspan]="3"
+                  [rowspan]="1"
+                  [style.background-color]="'#3b81a8'">
+                pontos
+              </mat-grid-tile>
+              <mat-grid-tile
+                  [colspan]="1"
+                  [rowspan]="1"
+                  [style.background-color]="'#c9c9c9'">
+                  {{ table.points }}
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-card>
+        </div>
+    </div>
+  </div>
+</section>

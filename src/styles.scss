@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// **Be sure that you only ever include this mixin once!**
+@include mat-core();
+
+// Define the theme.
+$eadbox-app-primary: mat-palette($mat-indigo, 50, 100, 200);
+$eadbox-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$eadbox-app-theme:   mat-light-theme($eadbox-app-primary, $eadbox-app-accent);
+
+// Include the theme styles for only specified components.
+@include mat-toolbar-theme($eadbox-app-theme);

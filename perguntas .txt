@@ -1,0 +1,26 @@
+Vue
+- framework reativo, data bind, two way, events, criação de componentes
+- mas simplicidade
+- permite mais liberdade na construção da app, menos app boilerplate
+-rápido
+
+Angular
+-curva de aprendizado maior, mais app boilerplate
+-apps rápidas seguindo diretrizes seguras
+-rápido
+
+React
+-tudo é javascript (JSX)
+
+Backbone
+-somente uma biblioteca javascript
+-bem mais liberdade no projeto
+-boas práticas de orientação a objetos
+
+tempo: 6 horas e 30 min
+
+para a pergunta dos frameworks:
+https://br.vuejs.org/v2/guide/comparison.html
+https://tableless.com.br/conheca-o-vue-js-um-framework-javascript-para-criacao-de-componentes-web-reativos/
+
+
